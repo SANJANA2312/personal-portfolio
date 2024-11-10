@@ -1,0 +1,308 @@
+/* Base Styles for General Page Setup */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+    font-size: 10px; /* Base font size for easier rem calculations */
+  }
+  
+  body {
+    font-size: 1.6rem; /* Default body text size */
+    line-height: 1.5; /* Line height for better readability */
+    font-family: 'Poppins', sans-serif; /* Main font with fallback */
+    color: #011640; /* Primary text color */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Heading Styles */
+  h1 {
+    font-size: 7rem;
+    font-weight: 600;
+    margin: 8rem 0 2rem 0; /* Spacing around main heading */
+  }
+  
+  @media (max-width: 650px) {
+    h1 {
+      font-size: 5rem; /* Adjust heading size for smaller screens */
+    }
+  }
+  
+  /* Basic Styling for Links */
+  a {
+    color: #011640; /* Link color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  /* Image Styling */
+  img {
+    max-width: 100%; /* Ensure images scale down for responsiveness */
+    height: auto;
+    display: block; /* Remove inline space */
+  }
+  
+  /* Navigation Bar Styling */
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Fixed navigation at the top */
+    top: 0;
+    width: 100%;
+    min-height: 75px;
+    background-color: #fff;
+    box-shadow: 0 1rem 1rem -1rem rgba(55, 56, 58, 0.2); /* Subtle shadow */
+    z-index: 10; /* Ensure the nav stays on top */
+  }
+  
+  nav > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  nav li {
+    padding: 0 0.8rem; /* Space between nav items */
+    list-style: none; /* Remove default list style */
+  }
+  
+  nav .code {
+    color: white; /* Initial color for nav icons */
+    transition: color 0.3s ease-out; /* Smooth color change */
+  }
+  
+  nav a:hover .code {
+    color: #F2797B; /* Change color on hover */
+  }
+  
+  /* Welcome Section Styling */
+  #welcome-section {
+    margin: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh; /* Full height for a hero section */
+  }
+  
+  @media (max-width: 1000px) {
+    #welcome-section {
+      text-align: center; /* Center text on smaller screens */
+      margin-top: 10rem; /* Adjust top margin */
+      flex-direction: column; /* Vertical layout for small screens */
+      justify-content: center;
+    }
+  }
+  
+  .welcome-img {
+    margin-top: 8rem; /* Space above the image */
+    width: 580px; /* Image width */
+    height: auto;
+  }
+  
+  /* Display adjustments for different devices */
+  #mobile-only {
+    display: none; /* Hide on desktop */
+  }
+  
+  @media (max-width: 850px) {
+    #desktop-only {
+      display: none; /* Hide on smaller screens */
+    }
+    
+    #mobile-only {
+      display: block; /* Show on mobile */
+      width: 450px;
+    }
+  }
+  
+  /* Subheading Styling */
+  #subheading {
+    font-size: 5rem;
+    font-weight: 600;
+    margin: 2rem 0; /* Margin above and below */
+  }
+  
+  #subheading span {
+    color: #F2797B; /* Highlight color for subheading */
+  }
+  
+  @media (max-width: 650px) {
+    #subheading {
+      font-size: 4rem; /* Adjust subheading size for smaller screens */
+    }
+  }
+  
+  /* About Section Styling */
+  #about {
+    padding: 10rem 5rem 5rem 5rem; /* Spacing around the section */
+  }
+  
+  #about h2 {
+    text-align: center; /* Center align heading */
+  }
+  
+  #about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  @media (max-width: 850px) {
+    #about-container {
+      width: 100%; /* Full width on smaller screens */
+      flex-direction: column; /* Stack content vertically */
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  #my-story {
+    width: 60%; /* Width for the story section */
+    padding: 0 2rem; /* Padding for better spacing */
+  }
+  
+  #interests-list {
+    background-color: #011640; /* Background color */
+    color: #fff; /* Text color */
+    padding: 3rem; /* Inner spacing */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  @media (max-width: 850px) {
+    #my-story {
+      width: 100%; /* Full width for story on smaller screens */
+      margin-bottom: 5rem; /* Margin at the bottom */
+    }
+    
+    #interests-list {
+      margin: auto; /* Center align on smaller screens */
+    }
+  }
+  
+  #interests-list > h3 {
+    text-align: center; /* Center align heading */
+    padding-bottom: 2rem; /* Space below heading */
+  }
+  
+  /* Projects Section Styling */
+  #projects {
+    padding: 10rem 5rem; /* Spacing around section */
+    text-align: center; /* Center align text */
+  }
+  
+  #projects > p {
+    margin-bottom: 5rem; /* Space below introductory paragraph */
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid */
+    grid-gap: 5rem; /* Gap between grid items */
+    margin: 1.5rem auto; /* Center align grid */
+  }
+  
+  @media (max-width: 400px) {
+    .projects-grid {
+      grid-template-columns: 1fr; /* Single column for small screens */
+      margin: 0 auto; /* Center align grid */
+    }
+  }
+  
+  .card {
+    position: relative;
+    padding-bottom: 2rem; /* Space at the bottom */
+    border: 1px solid rgba(217, 217, 217, 0.5); /* Border color */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 2rem -0.7rem #D9D9D9; /* Shadow on hover */
+    border: 1px solid #D9D9D9; /* Border color change */
+  }
+  
+  .desc {
+    padding: 2rem; /* Inner padding */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .project-tile {
+    margin: 2rem 0; /* Margin above and below */
+  }
+  
+  .project-tile > a {
+    color: #F2797B; /* Link color */
+    font-weight: 200; /* Lighter font */
+  }
+  
+  /* Contact Section Styling */
+  #contact {
+    margin-top: 3rem; /* Margin above section */
+    padding: 10rem 5rem; /* Padding */
+    text-align: center; /* Center align text */
+    background-color: #011640; /* Background color */
+    color: #fff; /* Text color */
+  }
+  
+  .contact-icon {
+    width: 2rem; /* Icon size */
+    padding: 1rem; /* Padding */
+    filter: invert(100%); /* Invert color for visibility */
+  }
+  
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Full width */
+    margin-top: 4rem; /* Margin above links */
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+  
+  .contact-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Center vertically */
+    justify-content: center;
+    color: #fff; /* Text color */
+    padding: 1rem; /* Padding */
+  }
+  
+  .contact-details:hover .contact-icon {
+    filter: invert(83%) sepia(39%) saturate(6798%) hue-rotate(308deg) brightness(92%) contrast(107%); /* Color change on hover */
+  }
+  
+  .contact-details:hover {
+    color: #F2797B; /* Text color change on hover */
+  }
+  
+  /* Footer Styling */
+  footer {
+    text-align: center; /* Center align text */
+    padding: 2rem 0; /* Padding */
+    background-color: #011640; /* Background color */
+    color: #fff; /* Text color */
+  }
+  
+  .heart::before {
+    content: '\2665'; /* Heart symbol */
+    color: #F2797B; /* Heart color */
+    font-size: 1.6rem; /* Size */
+  }
+  
+  footer .code {
+    color: #F2797B; /* Code color */
+  }
+  
+  /* Text Selection Color */
+  ::-moz-selection {
+    color: #fff; /* Selected text color */
+    background: #02A1A3; /* Background color */
+  }
+  
+  ::selection {
+    color: #fff;
+    background: #02A1A3;
+  }
